@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
  
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
@@ -32,7 +33,18 @@ public class PlayerMovement : MonoBehaviour
  
     void Update()
     {
- 
+        if (Input.GetButtonDown("Pause")) {
+            if (Time.timeScale == 0f) {
+                Time.timeScale = 1f;    // Unpause the game by setting the time scale back to 1
+            } else {
+                Time.timeScale = 0f;    // Pause the game by setting the time scale to 0
+            }
+        }
+
+        if (Input.GetButtonDown("MainMenu")) {
+            SceneManager.LoadScene(0);
+        }
+
         #region Handles Movment
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
