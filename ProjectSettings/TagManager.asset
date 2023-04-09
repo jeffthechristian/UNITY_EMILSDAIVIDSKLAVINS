@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Cabin1Skapis
   - Reach
+  - Door
+  - Deathly4Enemy
+  - Enemy
   layers:
   - Default
   - TransparentFX
