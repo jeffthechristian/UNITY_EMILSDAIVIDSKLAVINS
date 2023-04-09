@@ -13100,32 +13100,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795512767}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e200f5d98f3258a4e80215ca5c7ca804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 460383938}
-  detectionRange: 10
+  detectionRange: 25
   attackRange: 4
-  minDistance: 1
-  randomMoveRadius: 100
---- !u!114 &1795512780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1795512767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fec420cbfdd39458e0424e62118ca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 460383938}
-  detectionRange: 20
-  attackRange: 4
-  randomMoveRadius: 100
+  randomMoveRadius: 50
 --- !u!65 &1795512783
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorScript : MonoBehaviour
-{
+public class DoorScript : MonoBehaviour {
     public Animator door;
     public GameObject openText;
     public GameObject closeText;
@@ -19,47 +18,37 @@ public class DoorScript : MonoBehaviour
     public Reach inReach = Reach.NotIn;
     public EnemyReach enemyReach = EnemyReach.NotIn;
 
-    void Start()
-    {
+    void Start() {
         openText.SetActive(false);
         closeText.SetActive(false);
         lockedText.SetActive(false);
     }
 
-    void OnTriggerEnter(Collider other)
-    {
+    void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Enemy") {
             enemyReach = EnemyReach.In;
             Debug.Log("Enemy entered trigger");
         }   
-        
-        if (other.gameObject.tag == "Reach")
-        {
-            if (doorState == DoorState.Closed)
-            {
-                if (KeyScript.HasKey(requiredKey))
-                {
+
+        if (other.gameObject.tag == "Reach") {
+            if (doorState == DoorState.Closed) {
+                if (KeyScript.HasKey(requiredKey)) {
                     inReach = Reach.In;
                     openText.SetActive(true);
-                }
-                else
-                {
+                } else {
                     inReach = Reach.In;
                     lockedText.SetActive(true);
                 }
             }
-            else if (doorState == DoorState.Open)
-            {
+            else if (doorState == DoorState.Open) {
                 inReach = Reach.In;
                 closeText.SetActive(true);
             }
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Reach")
-        {
+    void OnTriggerExit(Collider other) {
+        if (other.gameObject.tag == "Reach") {
             inReach = Reach.NotIn;
             openText.SetActive(false);
             closeText.SetActive(false);
@@ -72,8 +61,7 @@ public class DoorScript : MonoBehaviour
         }
     }
 
-    void Update()
-    {
+    void Update() {
         if (KeyScript.HasKey(requiredKey)) {
             doorLock = DoorLock.Unlocked;
         }
