@@ -13,9 +13,11 @@ public class DoorScript : MonoBehaviour
     public enum DoorState {Closed, Open};
     public enum DoorLock {Locked, Unlocked};
     public enum Reach {In, NotIn};
+    public enum EnemyReach {In, NotIn};
     public DoorState doorState = DoorState.Closed;
     public DoorLock doorLock = DoorLock.Locked;
     public Reach inReach = Reach.NotIn;
+    public EnemyReach enemyReach = EnemyReach.NotIn;
 
     void Start()
     {
@@ -26,6 +28,11 @@ public class DoorScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Enemy") {
+            enemyReach = EnemyReach.In;
+            Debug.Log("Enemy entered trigger");
+        }   
+        
         if (other.gameObject.tag == "Reach")
         {
             if (doorState == DoorState.Closed)
@@ -58,6 +65,11 @@ public class DoorScript : MonoBehaviour
             closeText.SetActive(false);
             lockedText.SetActive(false);
         }
+
+        if (other.gameObject.tag == "Enemy") {
+            enemyReach = EnemyReach.NotIn;
+            Debug.Log("Enemy exited trigger");
+        }
     }
 
     void Update()
@@ -66,11 +78,18 @@ public class DoorScript : MonoBehaviour
             doorLock = DoorLock.Unlocked;
         }
 
-            if (inReach == Reach.In && doorLock == DoorLock.Unlocked && doorState == DoorState.Closed && Input.GetButtonDown("Interact")) {
-                door.SetBool("OpenDoor", true);
-                door.SetBool("CloseDoor", false);
-                doorState = DoorState.Open;
-            }
+        if (enemyReach == EnemyReach.In && doorLock == DoorLock.Unlocked && doorState == DoorState.Closed) {
+            door.SetBool("OpenDoor", true);
+            door.SetBool("CloseDoor", false);
+            doorState = DoorState.Open;
+            Debug.Log("Enemy opening door");
+        }
+
+        if (inReach == Reach.In && doorLock == DoorLock.Unlocked && doorState == DoorState.Closed && Input.GetButtonDown("Interact")) {
+            door.SetBool("OpenDoor", true);
+            door.SetBool("CloseDoor", false);
+            doorState = DoorState.Open;
+        }
 
         else if (inReach == Reach.In && doorState == DoorState.Open && Input.GetButtonDown("Interact")) {
             door.SetBool("OpenDoor", false);
