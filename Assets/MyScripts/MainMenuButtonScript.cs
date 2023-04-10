@@ -18,4 +18,8 @@ public class MainMenuButtonScript : MonoBehaviour {
     public void Quit() {
         Application.Quit();
     }
+
+    void Update() {
+        Time.timeScale = 1f;
+    }
 }

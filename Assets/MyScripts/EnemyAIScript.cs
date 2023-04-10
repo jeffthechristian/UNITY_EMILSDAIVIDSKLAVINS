@@ -90,7 +90,7 @@ public class EnemyAIScript : MonoBehaviour {
 
     void Attack() {
         navMeshAgent.isStopped = true;
-        //transform.LookAt(player.transform.position);
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
         PlayAnimation("Attack1");
     }
 

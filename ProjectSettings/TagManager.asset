@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Deathly4Enemy
   - Enemy
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
