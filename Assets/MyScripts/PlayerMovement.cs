@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpPower = 2f;
     public float gravity = 10f;
  
+    public GameObject pauseText;
  
     public float lookSpeed = 2f;
     public float lookXLimit = 60f;
@@ -21,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     float rotationX = 0;
  
     public bool canMove = true;
- 
     
     CharacterController characterController;
     void Start()
@@ -29,20 +29,17 @@ public class PlayerMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        pauseText.SetActive(false);
     }
  
     void Update()
     {
         if (Input.GetButtonDown("Pause")) {
-            if (Time.timeScale == 0f) {
-                Time.timeScale = 1f;    // Unpause the game by setting the time scale back to 1
-            } else {
-                Time.timeScale = 0f;    // Pause the game by setting the time scale to 0
-            }
-        }
+                Time.timeScale = 0f;
+                pauseText.SetActive(true);
 
-        if (Input.GetButtonDown("MainMenu")) {
-            SceneManager.LoadScene(0);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
         }
 
         #region Handles Movment
