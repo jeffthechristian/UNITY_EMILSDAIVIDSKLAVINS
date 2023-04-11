@@ -21,6 +21,19 @@ public class QuestLogScript : MonoBehaviour {
     }
 
     void Update() {
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            // Enable the game objects
+            text.SetActive(true);
+            text2.SetActive(true);
+        }
+        else
+        {
+            // Disable the game objects
+            text.SetActive(false);
+            text2.SetActive(false);
+        }
+
         if (oldCluesCount < cluesCount) {
             bool foundCluesString = false;
 
