@@ -2,10 +2,12 @@
  using System.Collections.Generic;
  using UnityEngine;
  using UnityEngine.SceneManagement;
+ using UnityEngine.UI;
 
 public class MainMenuButtonScript : MonoBehaviour {
     public GameObject mainMenuBlock, optionBlock;
 
+    public Text currentDifficulty;
 
     private void Start() {
         Cursor.visible = true;
@@ -55,6 +57,15 @@ public class MainMenuButtonScript : MonoBehaviour {
     }
 
     public void Update() {
+        if (DifficultyScript.difficulty == DifficultyScript.Difficulty.Easy) {
+            currentDifficulty.text = "CURRENT DIFFICULTY: EASY";
+        }
+        if (DifficultyScript.difficulty == DifficultyScript.Difficulty.Average) {
+            currentDifficulty.text = "CURRENT DIFFICULTY: AVERAGE";            
+        }
+        if (DifficultyScript.difficulty == DifficultyScript.Difficulty.Hard) {
+            currentDifficulty.text = "CURRENT DIFFICULTY: HARD";            
+        }
         Time.timeScale = 1f;
     }
 }
