@@ -5,6 +5,8 @@ using UnityEngine;
 public class PaperScript : MonoBehaviour
 {
     public GameObject interactText;
+    public GameObject clue;
+    public GameObject nextClue;
     private bool inReach;
 
     void OnTriggerEnter(Collider other)
@@ -13,6 +15,7 @@ public class PaperScript : MonoBehaviour
         {
             inReach = true;
             interactText.SetActive(true);
+            clue.SetActive(true);
         }
     }
 
@@ -21,6 +24,7 @@ public class PaperScript : MonoBehaviour
         if (other.CompareTag("Reach"))
         {
             interactText.SetActive(false);
+            clue.SetActive(false);
             inReach = false;
         }
     }
@@ -29,6 +33,8 @@ public class PaperScript : MonoBehaviour
     {
         if (inReach && Input.GetButtonDown("Interact")) {
             interactText.SetActive(false);
+            clue.SetActive(false);
+            nextClue.SetActive(true);
             QuestLogScript.cluesCount++;
             Destroy(gameObject);
         }
