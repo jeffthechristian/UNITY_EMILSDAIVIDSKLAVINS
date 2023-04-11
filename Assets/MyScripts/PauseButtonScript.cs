@@ -10,6 +10,9 @@ public class PauseButtonScript : MonoBehaviour {
     public void MainMenu() {
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+
+        QuestLogScript.cluesCount = 0;
+        KeyScript.keys.Clear();
     }
 
     public void Resume() {
