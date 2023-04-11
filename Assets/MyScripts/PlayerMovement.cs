@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
  
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
     public Camera playerCamera;
     public float walkSpeed = 4f;
     public float runSpeed = 6f;
@@ -24,16 +23,14 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove = true;
     
     CharacterController characterController;
-    void Start()
-    {
+    void Start() {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         pauseText.SetActive(false);
     }
  
-    void Update()
-    {
+    void Update() {
         if (Input.GetButtonDown("Pause")) {
                 Time.timeScale = 0f;
                 pauseText.SetActive(true);
@@ -56,17 +53,13 @@ public class PlayerMovement : MonoBehaviour
         #endregion
  
         #region Handles Jumping
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
-        {
+        if (Input.GetButton("Jump") && canMove && characterController.isGrounded) {
             moveDirection.y = jumpPower;
-        }
-        else
-        {
+        } else {
             moveDirection.y = movementDirectionY;
         }
  
-        if (!characterController.isGrounded)
-        {
+        if (!characterController.isGrounded) {
             moveDirection.y -= gravity * Time.deltaTime;
         }
  
@@ -75,8 +68,7 @@ public class PlayerMovement : MonoBehaviour
         #region Handles Rotation
         characterController.Move(moveDirection * Time.deltaTime);
  
-        if (canMove)
-        {
+        if (canMove) {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);

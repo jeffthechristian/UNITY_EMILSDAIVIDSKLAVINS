@@ -20,9 +20,7 @@ public class EnemyAIScript : MonoBehaviour {
     void Start() {
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         enemyAnimation = GetComponent<Animation>();
-
         SetRandomMoveTarget();
-
         lastKnownPlayerPosition = player.transform.position;
     }
 
@@ -90,20 +88,22 @@ public class EnemyAIScript : MonoBehaviour {
 
     void Attack() {
         navMeshAgent.isStopped = true;
-        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+        Vector3 playerPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        transform.LookAt(playerPosition);
+
         PlayAnimation("Attack1");
     }
 
     void WalkAround() {
         navMeshAgent.SetDestination(randomMoveTarget);
-        navMeshAgent.speed = 2f;
+        navMeshAgent.speed = DifficultyScript.enemyWalkSpeed;
         PlayAnimation("Walk");
     }
 
     void Chase() {
         navMeshAgent.isStopped = false;
         navMeshAgent.SetDestination(player.transform.position);
-        navMeshAgent.speed = 5f;
+        navMeshAgent.speed = DifficultyScript.enemyChaseSpeed;
         PlayAnimation("Run");
     }
 
