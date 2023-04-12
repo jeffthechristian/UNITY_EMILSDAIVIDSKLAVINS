@@ -7374,7 +7374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460383938}
   m_LocalRotation: {x: -0, y: 0.59222525, z: -0, w: 0.80577254}
-  m_LocalPosition: {x: 406.96, y: 25.885, z: 459.53}
+  m_LocalPosition: {x: 252.4, y: 32.72, z: 487.3}
   m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7723,8 +7723,8 @@ MonoBehaviour:
 
     Past the cabin to the right you''ll go,
 
-    And then
-    walk straight, don''t be slow.
+    And then walk
+    straight, don''t be slow.
 
     Keep your pace until you see,
 
@@ -19792,13 +19792,13 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'From the hill with the cross so high,
 
-    Turn back and to the barn
-    nearby.
+    Turn back and to the barn nearby.
 
-    No need to wander, no need to roam,
+    No
+    need to wander, no need to roam,
 
-    Just head towards the
-    barn and you''re home.'
+    Just head towards the barn and you''re
+    home.'
 --- !u!222 &1051608211
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25935,8 +25935,8 @@ MonoBehaviour:
 
     Keep walking straight, without delay,
 
-    Until a hill
-    with blue flowers comes your way.
+    Until a hill with
+    blue flowers comes your way.
 
     Climb up that hill, and don''t you tire,
 
@@ -29373,29 +29373,29 @@ MonoBehaviour:
     Into
     the woods I wander lost, consumed by all my inner fears.
 
-    
 
-    I hope
-    you''ll find me ere too long, before this darkness claims me strong,
 
-    My
-    birthday surprise a foolish game, has brought us both to suffer pain.
+    I hope you''ll
+    find me ere too long, before this darkness claims me strong,
 
-    
+    My birthday
+    surprise a foolish game, has brought us both to suffer pain.
 
-    I
-    pray my selfishness you''ll forgive, and in your heart I''ll ever live,
 
-    But
-    if I fall and can''t be saved, please promise me you''ll not deprave.
 
-    
+    I pray my
+    selfishness you''ll forgive, and in your heart I''ll ever live,
 
-    For
-    in my heart I hold you dear, and in your arms I''ve naught to fear,
+    But if I
+    fall and can''t be saved, please promise me you''ll not deprave.
 
-    So
-    find me soon and end this plight, and let us chase away this night.'
+
+
+    For in
+    my heart I hold you dear, and in your arms I''ve naught to fear,
+
+    So find
+    me soon and end this plight, and let us chase away this night.'
 --- !u!222 &1650753141
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32120,18 +32120,17 @@ MonoBehaviour:
 
     Keep walking until you see,
 
-    A muddy car, where you should
-    be.
+    A muddy car, where you should be.
 
-    From there, take a right and walk on,
+    From
+    there, take a right and walk on,
 
-    Until you see a hill, not
-    long gone.
+    Until you see a hill, not long gone.
 
-    Red flowers bloom at the top,
+    Red
+    flowers bloom at the top,
 
-    Climb up the hill, don''t
-    make it stop.'
+    Climb up the hill, don''t make it stop.'
 --- !u!222 &1861788976
 CanvasRenderer:
   m_ObjectHideFlags: 0

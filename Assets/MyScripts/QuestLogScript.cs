@@ -14,10 +14,6 @@ public class QuestLogScript : MonoBehaviour {
     void Start() {
         stringList.Add("- Investigate the area");
         oldCluesCount = cluesCount;
-
-        // Remove the specified string from the list
-        //string stringToRemove = "World";
-        //stringList.Remove(stringToRemove);
     }
 
     void Update() {
