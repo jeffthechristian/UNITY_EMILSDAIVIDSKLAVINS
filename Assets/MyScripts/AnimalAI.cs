@@ -16,7 +16,7 @@ public class AnimalAI : MonoBehaviour
     }
 
     void Update() {
-        // Check if the rabbit has reached the current target
+        // Check if the animal has reached the current target
         if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance) {
             SetRandomMoveTarget();
         }
