@@ -11,26 +11,22 @@ public class PaperScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Reach"))
-        {
+        if (other.CompareTag("Reach")) {
             inReach = true;
             interactText.SetActive(true);
             clue.SetActive(true);
         }
     }
 
-    void OnTriggerExit(Collider other) 
-    {
-        if (other.CompareTag("Reach"))
-        {
+    void OnTriggerExit(Collider other)  {
+        if (other.CompareTag("Reach")) {
             interactText.SetActive(false);
             clue.SetActive(false);
             inReach = false;
         }
     }
 
-        void Update()
-    {
+        void Update() {
         if (inReach && Input.GetButtonDown("Interact")) {
             interactText.SetActive(false);
             clue.SetActive(false);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarFallScript : MonoBehaviour {
     public Animator car;
     public GameObject enemy;
+    public GameObject sound;
     private bool shouldFall = false;
     private bool isFall = false; 
 
@@ -19,11 +20,17 @@ public class CarFallScript : MonoBehaviour {
             car.SetBool("isNear", true);
             isFall = true;
             StartCoroutine(DisappearEnemy());
+            StartCoroutine(PlaySound());
         }
     }
 
     IEnumerator DisappearEnemy() {
         yield return new WaitForSeconds(2f);
         enemy.SetActive(false);
+    }
+
+    IEnumerator PlaySound() {
+        yield return new WaitForSeconds(0.7f);
+        sound.SetActive(true);
     }
 }
