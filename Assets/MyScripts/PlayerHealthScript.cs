@@ -36,7 +36,7 @@ public class PlayerHealthScript : MonoBehaviour {
             Debug.Log(currentHealth);
         }
         healthText.text = "HEALTH: " + currentHealth + "HP";
-        coinText.text = "COINS: " + coinCount;
+        coinText.text = "MONEY: " + coinCount;
     }
 
     IEnumerator Cooldown() {
