@@ -25,7 +25,7 @@ public class CoinScript : MonoBehaviour
     void Update() {
         if (inReach && Input.GetButtonDown("Interact")) {
             interactText.SetActive(false);
-            PlayerHealthScript.coinCount += 1;
+            PlayerHealthScript.coinCount += 100;
             Destroy(gameObject);
         }
     }

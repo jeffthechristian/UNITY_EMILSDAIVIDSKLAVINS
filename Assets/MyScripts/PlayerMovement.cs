@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour {
     public float gravity = 10f;
  
     public GameObject pauseText;
+    public GameObject reachObject;
+
  
     public float lookSpeed = 2f;
     public float lookXLimit = 60f;
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         pauseText.SetActive(false);
+        reachObject.transform.position = playerCamera.transform.position + playerCamera.transform.forward * 2f;
     }
  
     void Update() {
@@ -67,6 +70,7 @@ public class PlayerMovement : MonoBehaviour {
  
         #region Handles Rotation
         characterController.Move(moveDirection * Time.deltaTime);
+        reachObject.transform.position = playerCamera.transform.position + playerCamera.transform.forward * 2f;
  
         if (canMove) {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
