@@ -10,6 +10,7 @@ TagManager:
   - Deathly4Enemy
   - Enemy
   - EnemyAttack
+  - Coin
   layers:
   - Default
   - TransparentFX

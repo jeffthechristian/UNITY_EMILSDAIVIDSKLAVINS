@@ -4,10 +4,13 @@ using UnityEngine.UI;
 
 public class PlayerHealthScript : MonoBehaviour {
     public float cooldown = 2f;
-    private float currentHealth;
+    public static float currentHealth;
     public GameObject deathText;
     public Text healthText;
     private bool canTakeDamage = true;
+
+    public Text coinText;
+    public static int coinCount;
 
     void Start() {
         deathText.SetActive(false);
@@ -33,6 +36,7 @@ public class PlayerHealthScript : MonoBehaviour {
             Debug.Log(currentHealth);
         }
         healthText.text = "HEALTH: " + currentHealth + "HP";
+        coinText.text = "COINS: " + coinCount;
     }
 
     IEnumerator Cooldown() {
