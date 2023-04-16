@@ -19,11 +19,9 @@ public class TraderItemScript : MonoBehaviour {
     }
 
     void OnTriggerExit(Collider other)  {
-        if (other.CompareTag("Reach")) {
             canAfford.SetActive(false);
             cantAfford.SetActive(false);
             inReach = false;
-        }
     }
 
     void Update() {

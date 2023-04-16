@@ -12,7 +12,7 @@ public class QuestLogScript : MonoBehaviour {
     private int oldCluesCount;
 
     void Start() {
-        stringList.Add("- Investigate the area");
+        stringList.Add("- Follow the bottles that your wife left behind");
         oldCluesCount = cluesCount;
     }
 
@@ -26,6 +26,11 @@ public class QuestLogScript : MonoBehaviour {
         {
             text.SetActive(false);
             text2.SetActive(false);
+        }
+
+        if (1 == cluesCount && stringList.Contains("- Follow the bottles that your wife left behind")) {
+            stringList.RemoveAt(0);
+            foundCluesList.Add("- Follow the bottles that your wife left behind");
         }
 
         if (oldCluesCount < cluesCount) {
