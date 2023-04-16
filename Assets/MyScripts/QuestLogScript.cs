@@ -50,11 +50,28 @@ public class QuestLogScript : MonoBehaviour {
 
             // If the "Clues found" string wasn't found, add it to the list
             if (!foundCluesString) {
-            stringList.Add("- Clues found: " + cluesCount + "/10 \n" + "     - " + GetNextString());
-        }
+                stringList.Add("- Clues found: " + cluesCount + "/10 \n" + "     - " + GetNextString());
+            }
 
             // Update the old clues count
             oldCluesCount = cluesCount;
+        }
+
+        if (TraderQuest.traderQuestInProgress && !stringList.Contains("- Destroy the alien cross to get the key to the barn")) {
+            stringList.Add("- Destroy the alien cross to get the key to the barn");
+        }
+
+        if (TraderQuest.traderQuestFinished) {
+            for (int j = 0; j <stringList.Count; j++) {
+                if (stringList[j].StartsWith("- Destroy the alien cross to get the key to the barn") && !foundCluesList.Contains("- Destroy the alien cross to get the key to the barn")) {
+                    foundCluesList.Add(stringList[j]);  
+                }
+
+                if (stringList[j].StartsWith("- Destroy the alien cross to get the key to the barn")) {
+                    stringList.RemoveAt(j);
+                }
+                
+            }
         }
 
         string concatenatedString = string.Join("\n", stringList.ToArray());
