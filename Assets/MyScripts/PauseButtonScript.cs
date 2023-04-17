@@ -12,6 +12,7 @@ public class PauseButtonScript : MonoBehaviour {
         Time.timeScale = 1f;
 
         QuestLogScript.cluesCount = 0;
+        PlayerHealthScript.coinCount = 0;
         KeyScript.keys.Clear();
     }
 
