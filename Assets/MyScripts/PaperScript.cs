@@ -7,6 +7,7 @@ public class PaperScript : MonoBehaviour
     public GameObject interactText;
     public GameObject clue;
     public GameObject nextClue;
+    public bool isFinished;
     private bool inReach;
 
     void OnTriggerEnter(Collider other)
@@ -28,11 +29,16 @@ public class PaperScript : MonoBehaviour
 
         void Update() {
         if (inReach && Input.GetButtonDown("Interact")) {
+            if(isFinished) {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
             interactText.SetActive(false);
             clue.SetActive(false);
             nextClue.SetActive(true);
             QuestLogScript.cluesCount++;
             Destroy(gameObject);
+            
         }
     }
 }

@@ -26,7 +26,7 @@ public class PlayerHealthScript : MonoBehaviour {
         deathAudio.SetActive(false);
     }
 
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerStay(Collider other) {
         if (other.CompareTag("EnemyAttack") && canTakeDamage) {
             Debug.Log("Current health" + currentHealth);
             currentHealth--;
