@@ -11,20 +11,20 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Boss_diffuse
-    second: {fileID: 2800000, guid: b6c4f491126ead44aa04d400574134e9, type: 3}
+    second: {fileID: 2800000, guid: fdca53cccbfccdc4e9f40d49c29353f1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Boss_normal
-    second: {fileID: 2800000, guid: f4768f3b1396e0c4f8c9f4ace95c0d7c, type: 3}
+    second: {fileID: 2800000, guid: 2e11d602743cc6945b7e629942ae330e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Boss_specular
-    second: {fileID: 2800000, guid: d99a39e86e7d5a84d9a4b4ea18ff35cd, type: 3}
+    second: {fileID: 2800000, guid: d2d1747183af9f545b624d6ea0af8d1a, type: 3}
   materials:
     materialImportMode: 2
-    materialName: 0
+    materialName: 2
     materialSearch: 1
     materialLocation: 1
   animations:
