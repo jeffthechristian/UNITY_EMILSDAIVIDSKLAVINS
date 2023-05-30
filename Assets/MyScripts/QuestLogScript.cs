@@ -47,6 +47,7 @@ public class QuestLogScript : MonoBehaviour {
                     if (cluesCount == 10) {
                         foundCluesList.Add(stringList[i]);
                         stringList.RemoveAt(i);
+                        stringList.Add("- Bring your wife back to the car");
                     }
 
                     break;
@@ -96,7 +97,7 @@ public class QuestLogScript : MonoBehaviour {
         "Between the barn and greenhouse, there's a way, \n       Through the woods, you'll need to stray. \n       Keep walking straight, don't you fret, \n       Until a hill with purple flowers, you'll get. \n       Climb up that hill, and don't you lag, \n       A cross awaits you, like an old tag.",
         "From the hill with the cross so high, \n       Turn back and to the barn nearby. \n       No need to wander, no need to roam, \n       Just head towards the barn and you're home.",
         "You've come so far, through woods and fields, \n       The final destination, your victory yields. \n       From the path that led you to the kiosk old, \n       Take the right path, be brave and bold. \n       Through the woods and up the hill, \n       Keep climbing, with strong will. \n       Until you reach a clearing bright, \n       And there behold a wonderful sight. \n       A pond so clear, a sight to see, \n       The final destination, where you'll be.",
-        "I sense a shadow lurking near, unsure of where to go from here, \n       Into the woods I wander lost, consumed by all my inner fears. \n\n       I hope you'll find me ere too long, before this darkness claims me strong, \n       My birthday surprise a foolish game, has brought us both to suffer pain. \n\n       I pray my selfishness you'll forgive, and in your heart I'll ever live, \n       But if I fall and can't be saved, please promise me you'll not deprave. \n\n       For in my heart I hold you dear, and in your arms I've naught to fear, \n       So find me soon and end this plight, and let us chase away this night."};
+        "Find your wife"};
     int currentStringIndex = 0;
 
     string GetNextString() {
