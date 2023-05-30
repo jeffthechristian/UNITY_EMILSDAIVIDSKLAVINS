@@ -7,6 +7,7 @@ public class ChurchGhostScript : MonoBehaviour
     public GameObject ghost;
     public GameObject shh;
     public GameObject whisper;
+    public GameObject disappearEffect;
     private bool isSpooky;
     private bool isScary;
 
@@ -14,6 +15,7 @@ public class ChurchGhostScript : MonoBehaviour
     {
         ghost.SetActive(false);
         shh.SetActive(false);
+        disappearEffect.SetActive(false);
         whisper.SetActive(true);
         isSpooky = false;
         isScary = false;
@@ -36,6 +38,7 @@ public class ChurchGhostScript : MonoBehaviour
             ghost.SetActive(false);
             shh.SetActive(true);
             whisper.SetActive(false);
+            disappearEffect.SetActive(true);
         }
     }
 }
