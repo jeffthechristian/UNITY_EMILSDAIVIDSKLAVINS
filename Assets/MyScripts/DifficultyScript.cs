@@ -10,8 +10,17 @@ public class DifficultyScript : MonoBehaviour {
     public GameObject[] avgEnemies;
     public GameObject[] hardEnemies;
 
+    public static GameObject[] easyHealthIcons;
+
+    [SerializeField]
+    private GameObject[] easyHealthIcons1;
+
     public static float playerHealth;
     public static float enemyWalkSpeed, enemyChaseSpeed;
+
+    private void Awake() {
+        easyHealthIcons = easyHealthIcons1;
+    }
 
     void Start() {
         switch (difficulty) {

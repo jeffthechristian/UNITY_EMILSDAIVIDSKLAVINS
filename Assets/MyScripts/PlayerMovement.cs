@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour {
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
  
-    public bool canMove = true;
+    public static bool canMove = true;
     
     CharacterController characterController;
     void Start() {
@@ -37,9 +37,14 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetButtonDown("Pause")) {
                 Time.timeScale = 0f;
                 pauseText.SetActive(true);
+                canMove = false;
 
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+        }
+
+        if(!canMove) {
+            return;
         }
 
         #region Handles Movment

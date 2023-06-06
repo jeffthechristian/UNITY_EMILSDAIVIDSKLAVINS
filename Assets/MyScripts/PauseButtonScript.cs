@@ -17,6 +17,7 @@ public class PauseButtonScript : MonoBehaviour {
     }
 
     public void Resume() {
+        PlayerMovement.canMove = true;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

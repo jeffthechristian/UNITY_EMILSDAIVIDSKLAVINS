@@ -38,6 +38,7 @@ public class PlayerHealthScript : MonoBehaviour {
     }
 
     void Update() {
+        UpdateIcons(DifficultyScript.easyHealthIcons);
         if (currentHealth <= 0f) {
             deathAudio.SetActive(true);
             Time.timeScale = 0f;
@@ -66,6 +67,16 @@ public class PlayerHealthScript : MonoBehaviour {
             damageEffectImage.color = Color.red;
             yield return new WaitForSeconds(0.1f);
             damageEffectImage.color = Color.clear;
+        }
+    }
+
+    void UpdateIcons(GameObject[] icons) {
+        for (int i = 0; i < icons.Length; i++) {
+            if (i < currentHealth) {
+                icons[i].SetActive(true);
+            } else {
+                icons[i].SetActive(false);
+            }
         }
     }
 }

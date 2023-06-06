@@ -8,6 +8,7 @@ public class TraderItemScript : MonoBehaviour {
     public string keyName;
     public int price;
     private bool inReach;
+    public GameObject soundEffect;
 
     void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Reach") && PlayerHealthScript.coinCount >= price) {
@@ -25,11 +26,12 @@ public class TraderItemScript : MonoBehaviour {
     }
 
     void Update() {
-        if (inReach && Input.GetButtonDown("Interact") && PlayerHealthScript.coinCount >= price) {
+        if (inReach && Input.GetButtonDown("Interact") && PlayerHealthScript.coinCount >= price && PlayerHealthScript.currentHealth < 5) {
             canAfford.SetActive(false);
             KeyScript.keys[keyName] = true;
             PlayerHealthScript.coinCount -= price;
             PlayerHealthScript.currentHealth +=1;
+            soundEffect.SetActive(true);
             Destroy(gameObject);
         }
     }
