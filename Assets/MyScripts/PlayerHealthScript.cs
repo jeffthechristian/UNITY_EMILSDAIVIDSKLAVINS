@@ -12,6 +12,7 @@ public class PlayerHealthScript : MonoBehaviour {
     public GameObject deathText;
     public Text healthText;
     private bool canTakeDamage = true;
+    public GameObject[] moneyIcons;
 
     public Text coinText;
     public static int coinCount;  
@@ -39,6 +40,7 @@ public class PlayerHealthScript : MonoBehaviour {
 
     void Update() {
         UpdateIcons(DifficultyScript.easyHealthIcons);
+        UpdateIconsMoney(moneyIcons);
         if (currentHealth <= 0f) {
             deathAudio.SetActive(true);
             Time.timeScale = 0f;
@@ -73,6 +75,16 @@ public class PlayerHealthScript : MonoBehaviour {
     void UpdateIcons(GameObject[] icons) {
         for (int i = 0; i < icons.Length; i++) {
             if (i < currentHealth) {
+                icons[i].SetActive(true);
+            } else {
+                icons[i].SetActive(false);
+            }
+        }
+    }
+
+    void UpdateIconsMoney(GameObject[] icons) {
+        for (int i = 0; i < icons.Length; i++) {
+            if (i < coinCount / 100) {
                 icons[i].SetActive(true);
             } else {
                 icons[i].SetActive(false);

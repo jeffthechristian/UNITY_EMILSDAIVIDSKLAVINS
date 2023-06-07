@@ -9,8 +9,7 @@ public class MoveThingsScript : MonoBehaviour
     public string interactTag;
     private bool inReach;
     public enum ObjectState {Closed, Open};
-    public ObjectState objectState = ObjectState.Closed;
-    
+    public ObjectState objectState = ObjectState.Closed;    
 
     void Start()
     {

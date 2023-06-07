@@ -6,6 +6,7 @@ public class CoinScript : MonoBehaviour
 {
     private bool inReach;
     public GameObject interactText;
+    public GameObject soundEffect;
 
     void OnTriggerEnter(Collider other)
     {
@@ -26,6 +27,7 @@ public class CoinScript : MonoBehaviour
         if (inReach && Input.GetButtonDown("Interact")) {
             interactText.SetActive(false);
             PlayerHealthScript.coinCount += 100;
+            soundEffect.SetActive(true);
             Destroy(gameObject);
         }
     }
