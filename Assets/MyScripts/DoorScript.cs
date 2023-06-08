@@ -8,6 +8,8 @@ public class DoorScript : MonoBehaviour {
     public GameObject closeText;
     public GameObject lockedText;
     public string requiredKey;
+    public GameObject soundOpen;
+    public GameObject soundClose;
 
     public enum DoorState {Closed, Open};
     public enum DoorLock {Locked, Unlocked};
@@ -22,6 +24,8 @@ public class DoorScript : MonoBehaviour {
         openText.SetActive(false);
         closeText.SetActive(false);
         lockedText.SetActive(false);
+        soundOpen.SetActive(false);
+        soundClose.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other) {
@@ -71,18 +75,24 @@ public class DoorScript : MonoBehaviour {
             door.SetBool("CloseDoor", false);
             doorState = DoorState.Open;
             Debug.Log("Enemy opening door");
+            soundOpen.SetActive(true);
+            soundClose.SetActive(false);
         }
 
         if (inReach == Reach.In && doorLock == DoorLock.Unlocked && doorState == DoorState.Closed && Input.GetButtonDown("Interact")) {
             door.SetBool("OpenDoor", true);
             door.SetBool("CloseDoor", false);
             doorState = DoorState.Open;
+            soundOpen.SetActive(true);
+            soundClose.SetActive(false);
         }
 
         else if (inReach == Reach.In && doorState == DoorState.Open && Input.GetButtonDown("Interact")) {
             door.SetBool("OpenDoor", false);
             door.SetBool("CloseDoor", true);
             doorState = DoorState.Closed;
+            soundOpen.SetActive(false);
+            soundClose.SetActive(true);
         }
     }
 }
