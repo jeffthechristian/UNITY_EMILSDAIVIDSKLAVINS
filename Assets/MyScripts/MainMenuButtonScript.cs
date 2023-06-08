@@ -10,9 +10,9 @@ public class MainMenuButtonScript : MonoBehaviour {
     public Text currentDifficulty;
 
     private void Start() {
+        PlayerMovement.canMove = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-
         optionBlock.SetActive(false);
         infoBlock.SetActive(false);
         mainMenuBlock.SetActive(true);
