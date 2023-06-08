@@ -5,7 +5,7 @@
  using UnityEngine.UI;
 
 public class MainMenuButtonScript : MonoBehaviour {
-    public GameObject mainMenuBlock, optionBlock;
+    public GameObject mainMenuBlock, optionBlock, infoBlock;
 
     public Text currentDifficulty;
 
@@ -14,6 +14,7 @@ public class MainMenuButtonScript : MonoBehaviour {
         Cursor.lockState = CursorLockMode.None;
 
         optionBlock.SetActive(false);
+        infoBlock.SetActive(false);
         mainMenuBlock.SetActive(true);
         Debug.Log("Start");
     }
@@ -35,6 +36,11 @@ public class MainMenuButtonScript : MonoBehaviour {
         Debug.Log("options");
     }
 
+    public void Info() {
+        mainMenuBlock.SetActive(false);
+        infoBlock.SetActive(true);
+    }
+
     public void EasyDifficulty() {
         DifficultyScript.difficulty = DifficultyScript.Difficulty.Easy;
         Debug.Log("easy");
@@ -53,6 +59,7 @@ public class MainMenuButtonScript : MonoBehaviour {
     public void GoBack() {
         mainMenuBlock.SetActive(true);
         optionBlock.SetActive(false);
+        infoBlock.SetActive(false);
         Debug.Log("back");
     }
 

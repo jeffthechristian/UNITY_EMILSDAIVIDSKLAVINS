@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class MoveThingsScript : MonoBehaviour
 {
+    public float cooldown = 2f;
     public GameObject interactText;
     public Animator moveAnimation;
     public string interactTag;
     private bool inReach;
     public enum ObjectState {Closed, Open};
     public ObjectState objectState = ObjectState.Closed;    
+    public GameObject soundEffect;
 
     void Start()
     {
@@ -39,7 +41,8 @@ public class MoveThingsScript : MonoBehaviour
             moveAnimation.SetBool("isOpen", true);
             moveAnimation.SetBool("isClosed", false);
             Debug.Log("Opening way");
-
+            soundEffect.SetActive(true);
+            StartCoroutine(Cooldown());
             Invoke("SwitchObjectState", 1f);
         }
 
@@ -47,7 +50,8 @@ public class MoveThingsScript : MonoBehaviour
             moveAnimation.SetBool("isOpen", false);
             moveAnimation.SetBool("isClosed", true);
             Debug.Log("Closing way");
-
+            soundEffect.SetActive(true);
+            StartCoroutine(Cooldown());
             Invoke("SwitchObjectState", 1f);
         }
     }
@@ -58,5 +62,10 @@ public class MoveThingsScript : MonoBehaviour
         } else {
             objectState = ObjectState.Closed;
         }
+    }
+
+    IEnumerator Cooldown() {
+        yield return new WaitForSeconds(cooldown);
+        soundEffect.SetActive(false);
     }
 }
